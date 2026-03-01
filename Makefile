@@ -1,5 +1,8 @@
-install:
+sync:
 	uv sync
+
+install:
+	uv pip install -e .
 
 gendiff:
 	uv run gendiff
