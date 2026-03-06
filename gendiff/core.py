@@ -13,6 +13,7 @@ def generate_gendiff(filepath1, filepath2):
     formated_result = formation_output(diff_tree)
     return formated_result
 
+
 def add_prefix(key, value, status):
     prefixes = {
         'unmatched': ' ',
@@ -21,12 +22,14 @@ def add_prefix(key, value, status):
     }
     return f"{prefixes[status]} {key}: {value}"
 
+
 def formation_output(diff_tree):
     lines = ['{']
     for line in diff_tree:
         lines.append(line)
     lines.append('}')
     return '\n'.join(lines)
+
 
 def build_diff_tree(data1, data2):
     result = []
