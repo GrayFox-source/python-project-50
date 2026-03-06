@@ -23,3 +23,13 @@ jobs:
 
       - name: Run tests
         run: uv run pytest tests/ --cov=gendiff --cov-report=xml
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=GrayFox-source_python-project-50
+            -Dsonar.organization=grayfox-source
+            -Dsonar.python.coverage.reportPaths=coverage.xml

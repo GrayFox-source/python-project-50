@@ -1,6 +1,13 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/GrayFox-source/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/GrayFox-source/python-project-50/actions)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=GrayFox-source_python-project-50&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=GrayFox-source_python-project-50)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=GrayFox-source_python-project-50&metric=bugs)](https://sonarcloud.io/summary/new_code?id=GrayFox-source_python-project-50)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=GrayFox-source_python-project-50&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=GrayFox-source_python-project-50)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=GrayFox-source_python-project-50&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=GrayFox-source_python-project-50)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=GrayFox-source_python-project-50&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=GrayFox-source_python-project-50)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=GrayFox-source_python-project-50&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=GrayFox-source_python-project-50)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=GrayFox-source_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=GrayFox-source_python-project-50)
 
 
 [![Tests](https://github.com/твой-ник/python-project-50/actions/workflows/tests.yml/badge.svg)](https://github.com/твой-ник/python-project-50/actions/workflows/tests.yml)
-[![asciicast](https://asciinema.org/a/AbCdEf123456.svg?theme=monokai&size=medium&speed=2)](https://asciinema.org/a/tmUn6jf8z2600qoA)
+[`asciicast`](https://asciinema.org/a/tmUn6jf8z2600qoA)
