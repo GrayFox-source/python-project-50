@@ -1,14 +1,9 @@
-import json
-
-
-def read_file(file_name):
-    with open(file_name, 'r') as f:
-        return json.load(f)
+from gendiff.parsers import get_parser
 
 
 def generate_gendiff(filepath1, filepath2):
-    data1 = read_file(filepath1)
-    data2 = read_file(filepath2)
+    data1 = get_parser(filepath1)
+    data2 = get_parser(filepath2)
     diff_tree = build_diff_tree(data1, data2)
     formated_result = formation_output(diff_tree)
     return formated_result
