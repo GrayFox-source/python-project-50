@@ -1,10 +1,7 @@
-# gendiff/formatters/stylish.py
-
 INDENT_SIZE = 4
 
 
 def format_value(value, depth=0):
-    """Форматирует значение. Для словарей — цикл for."""
     if isinstance(value, dict):
         lines = ["{"]
         for key, val in value.items():
@@ -27,25 +24,20 @@ def format_value(value, depth=0):
 
 
 def format_stylish(diff_tree):
-    """Обходит дерево diff с помощью цикла while и стека."""
     lines = ["{"]
 
     stack = []
 
-    # Инициализируем стек: добавляем корневые узлы в обратном порядке
     for node in reversed(diff_tree):
         stack.append((node, 1))
 
     while stack:
         node, depth = stack.pop()
 
-        # Сначала проверяем статус
         status = node['status']
 
-        # ✅ Единая формула отступа для всех элементов
         indent = " " * (depth * INDENT_SIZE - 2)
 
-        # Обработка маркера закрытия — до доступа к 'key'
         if status == 'close_brace':
             lines.append(f"{indent}}}")
             continue
@@ -55,10 +47,8 @@ def format_stylish(diff_tree):
         if status == 'nested':
             lines.append(f"{indent}{key}: {{")
 
-            # ✅ ИСПРАВЛЕНИЕ 1: close_brace добавляем ПЕРЕД детьми
             stack.append(({'status': 'close_brace'}, depth))
 
-            # Дети добавляем в обратном порядке
             for child in reversed(node['children']):
                 stack.append((child, depth + 1))
 
@@ -68,7 +58,6 @@ def format_stylish(diff_tree):
 
         elif status == 'added':
             val = format_value(node['value'], depth)
-            # ✅ ИСПРАВЛЕНИЕ 2: используем indent вместо status_indent
             if val == "":
                 lines.append(f"{indent}+ {key}:")
             else:

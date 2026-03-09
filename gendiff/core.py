@@ -25,7 +25,8 @@ def build_diff_tree(data1, data2):
         val1 = data1.get(key)
         val2 = data2.get(key)
 
-        if in_first and in_second and isinstance(val1, dict) and isinstance(val2, dict):
+        if (in_first and in_second and isinstance(val1, dict)
+                and isinstance(val2, dict)):
             result.append({
                 'key': key,
                 'status': 'nested',
