@@ -1,3 +1,28 @@
-timeout: 20
-verbose: true
-host: hexlet.io
+common:
+    follow: true
+    timeout: 4000
+    setting1: Value 11
+    setting3: true
+    setting4: null
+    setting5:
+        key: value
+        deep:
+            id: 456
+            name: Katya
+        key5: value5
+    setting6:
+        key: value
+        deep:
+            id: 456
+            name: Masha
+
+group1:
+    foo: bar
+    baz: bars
+    nest: str
+    nest2: str2
+
+group2:
+    deep:
+        id: 456
+        name: Katya

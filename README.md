@@ -8,7 +8,6 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=GrayFox-source_python-project-50&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=GrayFox-source_python-project-50)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=GrayFox-source_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=GrayFox-source_python-project-50)
 
-
-[![Tests](https://github.com/твой-ник/python-project-50/actions/workflows/tests.yml/badge.svg)](https://github.com/твой-ник/python-project-50/actions/workflows/tests.yml)
 [`Пример работы JSON файла`](https://asciinema.org/a/tmUn6jf8z2600qoA)
 [`Пример работы Yaml файла`](https://asciinema.org/a/9oRHwB3EmApPURx0)
+[`Пример вывода в plain и stylish форматах`](https://asciinema.org/a/U5R2Kt3n7Pcke4Af)

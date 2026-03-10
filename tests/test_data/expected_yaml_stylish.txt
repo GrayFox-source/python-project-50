@@ -1,0 +1,47 @@
+{
+  common: {
+      - follow: false
+      + follow: true
+      - proxy: null
+      - setting1: Value 1
+      + setting1: Value 11
+      - setting2: 200
+      setting3: true
+      setting4: null
+      setting5: {
+          deep: {
+              id: 456
+              name: Katya
+          }
+          key: value
+          + key5: value5
+      }
+      + setting6: {
+          key: value
+          deep: {
+              id: 456
+              name: Masha
+          }
+      }
+      - timeout: 5000
+      + timeout: 4000
+  }
+  group1: {
+      baz: bars
+      foo: bar
+      nest: str
+      + nest2: str2
+  }
+  group2: {
+      deep: {
+          id: 456
+          name: Katya
+      }
+  }
+  - group3: {
+      deep: {
+          id: 456
+          name: Katya
+      }
+  }
+}

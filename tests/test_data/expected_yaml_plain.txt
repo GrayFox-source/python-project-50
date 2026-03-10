@@ -1,0 +1,9 @@
+Property 'common.follow' was updated. From false to true
+Property 'common.proxy' was removed
+Property 'common.setting1' was updated. From 'Value 1' to 'Value 11'
+Property 'common.setting2' was removed
+Property 'common.setting5.key5' was added with value: 'value5'
+Property 'common.setting6' was added with value: [complex value]
+Property 'common.timeout' was updated. From 5000 to 4000
+Property 'group1.nest2' was added with value: 'str2'
+Property 'group3' was removed
