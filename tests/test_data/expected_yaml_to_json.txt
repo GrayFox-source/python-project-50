@@ -1,147 +1,147 @@
 [
-    {
-        "key": "common",
-        "status": "nested",
-        "children": [
-            {
-                "key": "follow",
-                "status": "changed",
-                "value_old": false,
-                "value_new": true
-            },
-            {
-                "key": "proxy",
-                "status": "removed",
-                "value": null
-            },
-            {
-                "key": "setting1",
-                "status": "changed",
-                "value_old": "Value 1",
-                "value_new": "Value 11"
-            },
-            {
-                "key": "setting2",
-                "status": "removed",
-                "value": 200
-            },
-            {
-                "key": "setting3",
-                "status": "unchanged",
-                "value": true
-            },
-            {
-                "key": "setting4",
-                "status": "unchanged",
-                "value": null
-            },
-            {
-                "key": "setting5",
-                "status": "nested",
-                "children": [
-                    {
-                        "key": "deep",
-                        "status": "nested",
-                        "children": [
-                            {
-                                "key": "id",
-                                "status": "unchanged",
-                                "value": 456
-                            },
-                            {
-                                "key": "name",
-                                "status": "unchanged",
-                                "value": "Katya"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "key",
-                        "status": "unchanged",
-                        "value": "value"
-                    },
-                    {
-                        "key": "key5",
-                        "status": "added",
-                        "value": "value5"
-                    }
-                ]
-            },
-            {
-                "key": "setting6",
-                "status": "added",
-                "value": {
-                    "key": "value",
-                    "deep": {
-                        "id": 456,
-                        "name": "Masha"
-                    }
-                }
-            },
-            {
-                "key": "timeout",
-                "status": "changed",
-                "value_old": 5000,
-                "value_new": 4000
-            }
-        ]
-    },
-    {
-        "key": "group1",
-        "status": "nested",
-        "children": [
-            {
-                "key": "baz",
-                "status": "unchanged",
-                "value": "bars"
-            },
-            {
-                "key": "foo",
-                "status": "unchanged",
-                "value": "bar"
-            },
-            {
-                "key": "nest",
-                "status": "unchanged",
-                "value": "str"
-            },
-            {
-                "key": "nest2",
-                "status": "added",
-                "value": "str2"
-            }
-        ]
-    },
-    {
-        "key": "group2",
-        "status": "nested",
-        "children": [
-            {
-                "key": "deep",
-                "status": "nested",
-                "children": [
-                    {
-                        "key": "id",
-                        "status": "unchanged",
-                        "value": 456
-                    },
-                    {
-                        "key": "name",
-                        "status": "unchanged",
-                        "value": "Katya"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "key": "group3",
+  {
+    "key": "common",
+    "status": "nested",
+    "children": [
+      {
+        "key": "follow",
+        "status": "changed",
+        "value_old": false,
+        "value_new": true
+      },
+      {
+        "key": "proxy",
         "status": "removed",
+        "value": null
+      },
+      {
+        "key": "setting1",
+        "status": "changed",
+        "value_old": "Value 1",
+        "value_new": "Value 11"
+      },
+      {
+        "key": "setting2",
+        "status": "removed",
+        "value": 200
+      },
+      {
+        "key": "setting3",
+        "status": "unchanged",
+        "value": true
+      },
+      {
+        "key": "setting4",
+        "status": "unchanged",
+        "value": null
+      },
+      {
+        "key": "setting5",
+        "status": "nested",
+        "children": [
+          {
+            "key": "deep",
+            "status": "nested",
+            "children": [
+              {
+                "key": "id",
+                "status": "unchanged",
+                "value": 456
+              },
+              {
+                "key": "name",
+                "status": "unchanged",
+                "value": "Katya"
+              }
+            ]
+          },
+          {
+            "key": "key",
+            "status": "unchanged",
+            "value": "value"
+          },
+          {
+            "key": "key5",
+            "status": "added",
+            "value": "value5"
+          }
+        ]
+      },
+      {
+        "key": "setting6",
+        "status": "added",
         "value": {
-            "deep": {
-                "id": 456,
-                "name": "Katya"
-            }
+          "key": "value",
+          "deep": {
+            "id": 456,
+            "name": "Masha"
+          }
         }
+      },
+      {
+        "key": "timeout",
+        "status": "changed",
+        "value_old": 5000,
+        "value_new": 4000
+      }
+    ]
+  },
+  {
+    "key": "group1",
+    "status": "nested",
+    "children": [
+      {
+        "key": "baz",
+        "status": "unchanged",
+        "value": "bars"
+      },
+      {
+        "key": "foo",
+        "status": "unchanged",
+        "value": "bar"
+      },
+      {
+        "key": "nest",
+        "status": "unchanged",
+        "value": "str"
+      },
+      {
+        "key": "nest2",
+        "status": "added",
+        "value": "str2"
+      }
+    ]
+  },
+  {
+    "key": "group2",
+    "status": "nested",
+    "children": [
+      {
+        "key": "deep",
+        "status": "nested",
+        "children": [
+          {
+            "key": "id",
+            "status": "unchanged",
+            "value": 456
+          },
+          {
+            "key": "name",
+            "status": "unchanged",
+            "value": "Katya"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "group3",
+    "status": "removed",
+    "value": {
+      "deep": {
+        "id": 456,
+        "name": "Katya"
+      }
     }
+  }
 ]

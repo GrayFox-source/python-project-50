@@ -1,15 +1,20 @@
+# gendiff/formatters/stylish.py
+
 INDENT_SIZE = 4
 
 
 def format_value(value, depth=0):
+    """Форматирует значение. Для словарей — цикл for."""
     if isinstance(value, dict):
         lines = ["{"]
         for key, val in value.items():
-            indent = " " * ((depth + 2) * INDENT_SIZE)
+            # ✅ ИСПРАВЛЕНО: правильная формула отступа
+            indent = " " * ((depth + 1) * INDENT_SIZE)
             formatted_val = format_value(val, depth + 1)
             lines.append(f"{indent}{key}: {formatted_val}")
 
-        indent_close = " " * ((depth + 1) * INDENT_SIZE)
+        # ✅ ИСПРАВЛЕНО: правильная формула для закрывающей скобки
+        indent_close = " " * (depth * INDENT_SIZE)
         lines.append(f"{indent_close}}}")
         return "\n".join(lines)
 
@@ -24,6 +29,7 @@ def format_value(value, depth=0):
 
 
 def format_stylish(diff_tree):
+    """Обходит дерево diff с помощью цикла while и стека."""
     lines = ["{"]
 
     stack = []
@@ -36,7 +42,8 @@ def format_stylish(diff_tree):
 
         status = node['status']
 
-        indent = " " * (depth * INDENT_SIZE - 2)
+        indent = " " * (depth * INDENT_SIZE)  # 4, 8, 12...
+        status_indent = " " * ((depth - 1) * INDENT_SIZE + 2)  # 2, 6, 10...
 
         if status == 'close_brace':
             lines.append(f"{indent}}}")
@@ -59,28 +66,28 @@ def format_stylish(diff_tree):
         elif status == 'added':
             val = format_value(node['value'], depth)
             if val == "":
-                lines.append(f"{indent}+ {key}:")
+                lines.append(f"{status_indent}+ {key}:")
             else:
-                lines.append(f"{indent}+ {key}: {val}")
+                lines.append(f"{status_indent}+ {key}: {val}")
 
         elif status == 'removed':
             val = format_value(node['value'], depth)
             if val == "":
-                lines.append(f"{indent}- {key}:")
+                lines.append(f"{status_indent}- {key}:")
             else:
-                lines.append(f"{indent}- {key}: {val}")
+                lines.append(f"{status_indent}- {key}: {val}")
 
         elif status == 'changed':
-            val_old = format_value(node['value_old'], depth)
-            val_new = format_value(node['value_new'], depth)
-            if val_old == "":
-                lines.append(f"{indent}- {key}:")
+            old_val = format_value(node['value_old'], depth)
+            new_val = format_value(node['value_new'], depth)
+            if old_val == "":
+                lines.append(f"{status_indent}- {key}:")
             else:
-                lines.append(f"{indent}- {key}: {val_old}")
-            if val_new == "":
-                lines.append(f"{indent}+ {key}:")
+                lines.append(f"{status_indent}- {key}: {old_val}")
+            if new_val == "":
+                lines.append(f"{status_indent}+ {key}:")
             else:
-                lines.append(f"{indent}+ {key}: {val_new}")
+                lines.append(f"{status_indent}+ {key}: {new_val}")
 
     lines.append("}")
     return "\n".join(lines)
