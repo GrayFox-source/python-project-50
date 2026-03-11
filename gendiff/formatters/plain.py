@@ -17,15 +17,12 @@ def walk_plain(diff_tree, path=""):
         key = node["key"]
         status = node["status"]
 
-        # Полный путь
         current_path = f"{path}.{key}" if path else key
 
         if status == "nested":
-            # Если вложенный, рекурсивно обходим детей
             lines.extend(walk_plain(node["children"], current_path))
 
         elif status == "unchanged":
-            # Неизменённые не выводим в plain
             pass
 
         elif status == "added":
