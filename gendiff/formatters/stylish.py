@@ -63,31 +63,20 @@ def format_stylish(diff_tree):
             val = format_value(node['value'], depth)
             lines.append(f"{indent}{key}: {val}")
 
+
         elif status == 'added':
             val = format_value(node['value'], depth)
-            if val == "":
-                lines.append(f"{status_indent}+ {key}:")
-            else:
-                lines.append(f"{status_indent}+ {key}: {val}")
+            lines.append(f"{status_indent}+ {key}: {val}")
 
         elif status == 'removed':
             val = format_value(node['value'], depth)
-            if val == "":
-                lines.append(f"{status_indent}- {key}:")
-            else:
-                lines.append(f"{status_indent}- {key}: {val}")
+            lines.append(f"{status_indent}- {key}: {val}")
 
         elif status == 'changed':
             old_val = format_value(node['value_old'], depth)
             new_val = format_value(node['value_new'], depth)
-            if old_val == "":
-                lines.append(f"{status_indent}- {key}:")
-            else:
-                lines.append(f"{status_indent}- {key}: {old_val}")
-            if new_val == "":
-                lines.append(f"{status_indent}+ {key}:")
-            else:
-                lines.append(f"{status_indent}+ {key}: {new_val}")
+            lines.append(f"{status_indent}- {key}: {old_val}")
+            lines.append(f"{status_indent}+ {key}: {new_val}")
 
     lines.append("}")
     return "\n".join(lines)
