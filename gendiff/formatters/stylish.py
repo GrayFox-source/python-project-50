@@ -1,19 +1,14 @@
-# gendiff/formatters/stylish.py
-
 INDENT_SIZE = 4
 
 
 def format_value(value, depth=0):
-    """Форматирует значение. Для словарей — цикл for."""
     if isinstance(value, dict):
         lines = ["{"]
         for key, val in value.items():
-            # ✅ ИСПРАВЛЕНО: правильная формула отступа
             indent = " " * ((depth + 1) * INDENT_SIZE)
             formatted_val = format_value(val, depth + 1)
             lines.append(f"{indent}{key}: {formatted_val}")
 
-        # ✅ ИСПРАВЛЕНО: правильная формула для закрывающей скобки
         indent_close = " " * (depth * INDENT_SIZE)
         lines.append(f"{indent_close}}}")
         return "\n".join(lines)
@@ -29,7 +24,6 @@ def format_value(value, depth=0):
 
 
 def format_stylish(diff_tree):
-    """Обходит дерево diff с помощью цикла while и стека."""
     lines = ["{"]
 
     stack = []
@@ -42,8 +36,8 @@ def format_stylish(diff_tree):
 
         status = node['status']
 
-        indent = " " * (depth * INDENT_SIZE)  # 4, 8, 12...
-        status_indent = " " * ((depth - 1) * INDENT_SIZE + 2)  # 2, 6, 10...
+        indent = " " * (depth * INDENT_SIZE)
+        status_indent = " " * ((depth - 1) * INDENT_SIZE + 2)
 
         if status == 'close_brace':
             lines.append(f"{indent}}}")
