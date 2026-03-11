@@ -12,7 +12,7 @@ def main():
     parser.add_argument(
         "-f",
         "--format",
-        choices=["stylish", "plain"],
+        choices=["stylish", "plain", "json"],
         default="stylish",
         help="set format of output (default: stylish)",
     )
