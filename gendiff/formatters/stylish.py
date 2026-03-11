@@ -5,11 +5,11 @@ def format_value(value, depth=0):
     if isinstance(value, dict):
         lines = ["{"]
         for key, val in value.items():
-            indent = " " * ((depth + 1) * INDENT_SIZE - 2)
+            indent = " " * ((depth + 2) * INDENT_SIZE)
             formatted_val = format_value(val, depth + 1)
             lines.append(f"{indent}{key}: {formatted_val}")
 
-        indent_close = " " * (depth * INDENT_SIZE - 2)
+        indent_close = " " * ((depth + 1) * INDENT_SIZE)
         lines.append(f"{indent_close}}}")
         return "\n".join(lines)
 
