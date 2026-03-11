@@ -63,7 +63,6 @@ def format_stylish(diff_tree):
             val = format_value(node['value'], depth)
             lines.append(f"{indent}{key}: {val}")
 
-
         elif status == 'added':
             val = format_value(node['value'], depth)
             lines.append(f"{status_indent}+ {key}: {val}")
