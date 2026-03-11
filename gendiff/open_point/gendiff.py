@@ -18,7 +18,8 @@ def main():
     )
     args = parser.parse_args()
     result = generate_gendiff(args.first_file, args.second_file, args.format)
-    return result
+    print(result)
+    return 0
 
 
 if __name__ == "__main__":
